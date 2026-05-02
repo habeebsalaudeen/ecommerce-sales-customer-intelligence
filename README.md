@@ -79,7 +79,6 @@ This dashboard answers all four questions in a single page.
 ### Data Cleaning (Python / Pandas)
 - Removed cancellations — invoices starting with "C"
 - Removed rows with negative or zero Quantity and UnitPrice
-- Removed rows with no CustomerID
 - Added `Revenue` column — Quantity × UnitPrice
 
 ### Customer Segmentation (K-Means Clustering)
@@ -92,7 +91,7 @@ RFM analysis across 4,338 identified customers:
 | At Risk | 71 days | 4 orders | £1,803 | 1,173 (27%) |
 | Lost | 183 days | 1 order | £344 | 1,612 (37%) |
 
-**Note on Blank CustomerIDs:** 133,361 transaction rows have no CustomerID — these are guest or unregistered purchases. They are included in all revenue KPIs (real sales) but excluded from customer segmentation (no identity to segment). In a production environment, mandatory account creation at checkout would convert these into trackable customers.
+**Observation on Blank CustomerIDs:** 133,361 transaction rows have no CustomerID — these are guest or unregistered purchases. They are included in all revenue KPIs (real sales) but excluded from customer segmentation (no identity to segment). In a production environment, mandatory account creation at checkout would convert these into trackable customers.
 
 ---
 
@@ -146,10 +145,10 @@ Guest Transactions = CALCULATE(COUNTROWS(OnlineRetail), ISBLANK(OnlineRetail[Cus
 Based on the analysis, the three highest ROI actions for this business are:
 
 **1. Protect VIP customers immediately**
-716 customers generate £8,074 average spend — 23x more than lost customers. A loyalty programme or dedicated account manager for this group pays for itself instantly.
+716 customers generate £8,074 average spend — 23x more than lost customers. A loyalty programme or dedicated account manager for this group pays for itself instantly. (It very important to create this marketing program and influence this customers to buy more from us)
 
 **2. Launch a win-back campaign for At Risk segment**
-1,173 customers have not purchased in 71 days but previously bought 4 times. They are worth recovering. A targeted discount or product recommendation email sent now will convert a portion back to active buyers.
+1,173 customers have not purchased in 71 days but previously bought 4 times. They are worth recovering. A targeted discount or product recommendation email sent now will convert a portion back to active buyers. (A general email must be sent to increase our revenue and ensure increase in business value)
 
 **3. Invest in international markets**
 Netherlands, EIRE, Germany and France are already buying. They just have not been marketed to. Localised campaigns in these markets could double revenue without acquiring a single new product.
